@@ -24,7 +24,7 @@ const Reports = () => {
 
     const fetchTally = async () => {
         try {
-          const response = await axios.get(`http://localhost:8000/api/v1/events/${id}`);
+          const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/events/${id}`);
           const tallyData = response.data.medalTally;
           setDepartmentMedals(tallyData);
           setLoading(false);
@@ -37,7 +37,7 @@ const Reports = () => {
 
     const fetchEventName = async () => {
         try {
-          const response = await axios.get(`http://localhost:8000/api/v1/sport-events/event/${id}`);
+          const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/sport-events/event/${id}`);
           const eventname = response.data.event.name;
           setEventName(eventname); 
         } catch (error) {
@@ -47,7 +47,7 @@ const Reports = () => {
 
     const fetchReports = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/api/v1/events/${id}/reports`);
+            const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/events/${id}/reports`);
             const sportEventsData = response.data.sportEvents;
             const resultsData = response.data.results;
             setSportEvents(sportEventsData);

@@ -27,7 +27,7 @@ const Matches = () => {
 
     if(window.confirm('Are you sure you want to delete this match result?')){
       try {
-        await axios.delete(`http://localhost:8000/api/v1/matches/${matchResultID}`, {
+        await axios.delete(`https://htc-event-app-api.onrender.com/api/v1/matches/${matchResultID}`, {
           headers: {
             'Authorization': `Bearer ${user.token}`
           }
@@ -42,7 +42,7 @@ const Matches = () => {
   useEffect(() => {
     const fetchMatches = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/v1/schedules/${id}`);
+        const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/schedules/${id}`);
         const scheduleData = response.data.schedule;
         setSchedule(scheduleData);
         const matchesData = response.data.match;
@@ -63,7 +63,7 @@ const Matches = () => {
 
   const fetchEventName = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/v1/events/${eventID}/single-event`);
+      const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/events/${eventID}/single-event`);
       const name = response.data.event.name;
       setEventName(name);
     } catch (error) {

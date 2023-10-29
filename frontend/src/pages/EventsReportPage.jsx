@@ -17,7 +17,7 @@ const EventsReportPage = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/v1/events?search=${searchQuery}`);
+      const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/events?search=${searchQuery}`);
       const eventData = response.data.event.reverse();
       setEvents(eventData);
     } catch (error) {
@@ -33,7 +33,7 @@ const EventsReportPage = () => {
     } else {
     const fetchEvents = async () => {
         try {
-           const response = await axios.get(`http://localhost:8000/api/v1/events`);
+           const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/events`);
            const eventData = response.data.event.reverse();
            setEvents(eventData);
            setLoading(false);

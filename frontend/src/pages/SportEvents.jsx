@@ -27,7 +27,7 @@ const SportEvents = () => {
         
         if(window.confirm('Are you sure you want to delete this sport event?')){
             try {
-                await axios.delete(`http://localhost:8000/api/v1/sport-events/${sportEventID}`, {
+                await axios.delete(`https://htc-event-app-api.onrender.com/api/v1/sport-events/${sportEventID}`, {
                     headers: {
                         'Authorization': `Bearer ${user.token}`
                     }
@@ -42,7 +42,7 @@ const SportEvents = () => {
 
     const handleSearch = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/v1/events/${id}/sportevents?search=${searchQuery}`);
+        const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/events/${id}/sportevents?search=${searchQuery}`);
         const sportEventData = response.data.sportevents;
         setSportEvents(sportEventData);
       } catch (error) {
@@ -52,7 +52,7 @@ const SportEvents = () => {
 
     const fetchEventName = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/v1/sport-events/event/${id}`);
+        const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/sport-events/event/${id}`);
         const eventname = response.data.event.name;
         setEventName(eventname); 
       } catch (error) {
@@ -66,7 +66,7 @@ const SportEvents = () => {
         } else {
         const fetchSportEvents = async () => {
           try {
-            const response = await axios.get(`http://localhost:8000/api/v1/events/${id}/sportevents`);
+            const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/events/${id}/sportevents`);
             const sportEventsData = response.data.sportevents;
             setSportEvents(sportEventsData);
             setLoading(false);

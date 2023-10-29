@@ -27,7 +27,7 @@ const UpdateUser = () => {
 
     const fetchUser = async () => {
         try {
-            const response = await axios.get(`http://localhost:8000/api/v1/users/${id}`);
+            const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/users/${id}`);
             const firstname = response.data.user.firstname;
             const lastname = response.data.user.lastname;
             const userName = response.data.user.username;
@@ -50,7 +50,7 @@ const UpdateUser = () => {
     
          try {
             setIsSubmitting(true);
-            await axios.put(`http://localhost:8000/api/v1/users/${id}`, {
+            await axios.put(`https://htc-event-app-api.onrender.com/api/v1/users/${id}`, {
                 firstname: firstName,
                 lastname: lastName,
                 username: username,

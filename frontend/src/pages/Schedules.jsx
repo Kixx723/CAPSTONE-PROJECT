@@ -53,7 +53,7 @@ const Schedules = () => {
 
         if(window.confirm('Are you sure you want to delete this schedule?')) {
             try {
-                await axios.delete(`http://localhost:8000/api/v1/schedules/${schedID}`, {
+                await axios.delete(`https://htc-event-app-api.onrender.com/api/v1/schedules/${schedID}`, {
                     headers: {
                        'Authorization': `Bearer ${user.token}`
                     }
@@ -73,7 +73,7 @@ const Schedules = () => {
 
         if(window.confirm('Are you sure you want to delete this sport event result?')) {
             try {
-                await axios.delete(`http://localhost:8000/api/v1/results/${sportEventResultID}`, {
+                await axios.delete(`https://htc-event-app-api.onrender.com/api/v1/results/${sportEventResultID}`, {
                     headers: {
                        'Authorization': `Bearer ${user.token}`
                     }
@@ -89,7 +89,7 @@ const Schedules = () => {
     useEffect(() => {
         const fetchSchedules = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/api/v1/sport-events/${id}`);
+                const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/sport-events/${id}`);
                 const eventData = response.data.sportEvent.event.name;
                 setEventName(eventData);
                 const sportEventData = response.data.sportEvent;

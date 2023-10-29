@@ -37,7 +37,7 @@ const CreateSportEventResult = () => {
     
     try {
     setIsSubmitting(true);
-    await axios.post(`http://localhost:8000/api/v1/results`, {
+    await axios.post(`https://htc-event-app-api.onrender.com/api/v1/results`, {
         sportevent: id,
         gold: gold,
         silver: silver,
@@ -70,7 +70,7 @@ const CreateSportEventResult = () => {
   useEffect(() => {
     const fetchDepartment = async () => {
         try {
-           const response = await axios.get(`http://localhost:8000/api/v1/departments`);
+           const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/departments`);
            const departmentData = response.data.department
            setDepartments(departmentData);
         } catch (error) {
@@ -84,7 +84,7 @@ const CreateSportEventResult = () => {
 
   const fetchSportEventDetails =  async () => {
     try {
-       const response = await axios.get(`http://localhost:8000/api/v1/sport-events/${id}`);
+       const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/sport-events/${id}`);
        console.log(response.data);
        const eventNameData = response.data.sportEvent.event.name;
        const sportEventNameData = response.data.sportEvent.name;

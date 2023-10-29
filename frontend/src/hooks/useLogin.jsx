@@ -9,7 +9,7 @@ export const useLogin = () => {
     
     const login = async (username, password) => {
         try {
-            const response = await axios.post('http://localhost:8000/api/v1/users/login', {
+            const response = await axios.post('https://htc-event-app-api.onrender.com/api/v1/users/login', {
                 username: username,
                 password: password,
             }, {

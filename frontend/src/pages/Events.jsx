@@ -25,7 +25,7 @@ const Events = () => {
 
     if(window.confirm('Are you sure you want to delete this event?')) {
      try {
-      await axios.delete(`http://localhost:8000/api/v1/events/${eventID}`, {
+      await axios.delete(`https://htc-event-app-api.onrender.com/api/v1/events/${eventID}`, {
         headers: {
           'Authorization' : `Bearer ${user.token}`
         }
@@ -40,7 +40,7 @@ const Events = () => {
 
   const handleSearch = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/v1/events?search=${searchQuery}`);
+      const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/events?search=${searchQuery}`);
       const eventData = response.data.event.reverse();
       setEvents(eventData);
     } catch (error) {
@@ -56,7 +56,7 @@ const Events = () => {
     } else {
     const fetchEvents = async () => {
         try {
-           const response = await axios.get(`http://localhost:8000/api/v1/events`);
+           const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/events`);
            const eventData = response.data.event.reverse();
            setEvents(eventData);
            setLoading(false);
@@ -181,7 +181,7 @@ const Events = () => {
                     <div className='bg-gray-200 h-80 rounded-r-md'>
                       <img
                         className='absolute h-full w-full object-cover rounded-r-md hover:scale-105 transition delay-0 duration-300 ease-in-out'
-                        src={`http://localhost:8000/Images/${event.image}`}
+                        src={`https://htc-event-app-api.onrender.com/Images/${event.image}`}
                         alt={event.name}
                       />
                     </div>

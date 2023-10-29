@@ -33,7 +33,7 @@ const UpdateSchedule = () => {
     useEffect(() => {
         const fetchSchedule = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/api/v1/schedules/${id}`);
+                const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/schedules/${id}`);
                 const sched = response.data.schedule.scheduleDateTime;
                 const dep1 = response.data.schedule.department1?._id;
                 const dep2 = response.data.schedule.department2?._id;
@@ -59,7 +59,7 @@ const UpdateSchedule = () => {
 
     const fetchEventName = async () => {
         try {
-          const response = await axios.get(`http://localhost:8000/api/v1/events/${eventID}/single-event`);
+          const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/events/${eventID}/single-event`);
           const name = response.data.event.name;
           setEventName(name);
         } catch (error) {
@@ -70,7 +70,7 @@ const UpdateSchedule = () => {
     useEffect(() => {
         const fetchDepartment = async () => {
             try {
-               const response = await axios.get(`http://localhost:8000/api/v1/departments`);
+               const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/departments`);
                const departmentData = response.data.department
                setDepartments(departmentData);
             } catch (error) {
@@ -104,7 +104,7 @@ const UpdateSchedule = () => {
             requestData.department2 = department2;
         }
 
-        await axios.put(`http://localhost:8000/api/v1/schedules/${id}`, requestData , {
+        await axios.put(`https://htc-event-app-api.onrender.com/api/v1/schedules/${id}`, requestData , {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${user.token}`

@@ -22,7 +22,7 @@ const Tally = () => {
     useEffect(() => {
         const fetchTally = async () => {
           try {
-            const response = await axios.get(`http://localhost:8000/api/v1/events/${id}`);
+            const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/events/${id}`);
             const eventData = response.data.event;
             setEventName(eventData);
             const tallyData = response.data.medalTally;
