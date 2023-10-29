@@ -1,0 +1,131 @@
+
+@media screen and (max-width: 768px) {
+    .green {
+        width: 350px;
+        height: 400px;
+    }
+
+    .trini {
+        width: 320px;
+        height: 450px;
+    }
+
+    .title-text {
+        font-size: 1.4rem;
+        margin-top: -25px;
+        line-height: 2cap;
+    }
+
+    .title-paragraph {
+        font-size: 0.8rem;
+        margin-top: -20px;
+    }
+
+    .title-container {
+        width: 500px;
+    }
+
+  
+  }
+  
+  @media screen and (max-width: 698px) {
+    .title-container {
+        width: 500px;
+        margin-left: -80px;
+    }
+  
+  }
+
+  @media screen and (max-width: 620px) {
+    .title-text {
+        font-size: 1.2rem;
+        margin-top: -25px;
+        line-height: 2cap;
+    }
+
+    .title-paragraph {
+        font-size: 0.6rem;
+        margin-top: -20px;
+    }
+
+    .title-container {
+        width: 400px;
+        margin-top: 25px;
+    }
+  }
+
+  @media screen and (max-width: 544px) {
+    .green {
+        width: 240px;
+        height: 400px;
+    }
+
+    .trini {
+        width: 200px;
+        height: 400px;
+    }
+
+    .title-text {
+        font-size: 1.2rem;
+        margin-top: -25px;
+        line-height: 2cap;
+    }
+
+    .title-paragraph {
+        font-size: 0.8rem;
+        margin-top: -20px;
+    }
+
+    .title-container {
+        width: 500px;
+    }
+    
+  }
+
+  @media screen and (max-width: 492px) {
+    .title-text {
+        font-size: 1.2rem;
+        margin-top: -25px;
+        line-height: 2cap;
+    }
+
+    .title-paragraph {
+        font-size: 0.8rem;
+        margin-top: -20px;
+    }
+
+    .title-container {
+        width: 400px;
+    }
+    
+  }
+
+  @media screen and (max-width: 430px) {
+    .green {
+        width: 100%;
+        height: 50%;
+    }
+
+    .trini {
+        width: 80%;
+        height: 55%;
+    }
+
+
+    .title-text {
+        font-size: 1.5rem;
+        margin-top: -80px;
+        line-height: normal;
+    }
+
+    .title-paragraph {
+        font-size: 0.8rem;
+        margin-top: -20px;
+    }
+
+    .title-container {
+        width: 500px;
+        margin-left: -40px;
+    }
+    
+  }
