@@ -1,28 +1,28 @@
 
 @media screen and (max-width: 768px) {
     .green {
-        width: 350px;
-        height: 400px;
+        width: 350px !important;
+        height: 400px !important;
     }
 
     .trini {
-        width: 320px;
-        height: 450px;
+        width: 320px !important;
+        height: 450px !important;
     }
 
     .title-text {
-        font-size: 1.4rem;
-        margin-top: -25px;
-        line-height: 2cap;
+        font-size: 1.4rem !important;
+        margin-top: -25px !important;
+        line-height: 2cap !important;
     }
 
     .title-paragraph {
-        font-size: 0.8rem;
-        margin-top: -20px;
+        font-size: 0.8rem !important;
+        margin-top: -20px !important;
     }
 
     .title-container {
-        width: 500px;
+        width: 500px !important;
     }
 
   
@@ -30,102 +30,102 @@
   
   @media screen and (max-width: 698px) {
     .title-container {
-        width: 500px;
-        margin-left: -80px;
+        width: 500px !important;
+        margin-left: -80px !important;
     }
   
   }
 
   @media screen and (max-width: 620px) {
     .title-text {
-        font-size: 1.2rem;
-        margin-top: -25px;
-        line-height: 2cap;
+        font-size: 1.2rem !important;
+        margin-top: -25px !important;
+        line-height: 2cap !important;
     }
 
     .title-paragraph {
-        font-size: 0.6rem;
-        margin-top: -20px;
+        font-size: 0.6rem !important;
+        margin-top: -20px !important;
     }
 
     .title-container {
-        width: 400px;
-        margin-top: 25px;
+        width: 400px !important;
+        margin-top: 25px !important;
     }
   }
 
   @media screen and (max-width: 544px) {
     .green {
-        width: 240px;
-        height: 400px;
+        width: 240px !important;
+        height: 400px !important;
     }
 
     .trini {
-        width: 200px;
-        height: 400px;
+        width: 200px !important;
+        height: 400px !important;
     }
 
     .title-text {
-        font-size: 1.2rem;
-        margin-top: -25px;
-        line-height: 2cap;
+        font-size: 1.2rem !important;
+        margin-top: -25px !important;
+        line-height: 2cap !important;
     }
 
     .title-paragraph {
-        font-size: 0.8rem;
-        margin-top: -20px;
+        font-size: 0.8rem !important;
+        margin-top: -20px !important;
     }
 
     .title-container {
-        width: 500px;
+        width: 500px !important;
     }
     
   }
 
   @media screen and (max-width: 492px) {
     .title-text {
-        font-size: 1.2rem;
-        margin-top: -25px;
-        line-height: 2cap;
+        font-size: 1.2rem !important;
+        margin-top: -25px !important;
+        line-height: 2cap !important;
     }
 
     .title-paragraph {
-        font-size: 0.8rem;
-        margin-top: -20px;
+        font-size: 0.8rem !important;
+        margin-top: -20px !important;
     }
 
     .title-container {
-        width: 400px;
+        width: 400px !important;
     }
     
   }
 
   @media screen and (max-width: 430px) {
     .green {
-        width: 100%;
-        height: 50%;
+        width: 100% !important;
+        height: 50% !important;
     }
 
     .trini {
-        width: 80%;
-        height: 55%;
+        width: 80% !important;
+        height: 55% !important;
     }
 
 
     .title-text {
-        font-size: 1.5rem;
-        margin-top: -80px;
-        line-height: normal;
+        font-size: 1.5rem !important;
+        margin-top: -80px !important;
+        line-height: normal !important;
     }
 
     .title-paragraph {
-        font-size: 0.8rem;
-        margin-top: -20px;
+        font-size: 0.8rem !important;
+        margin-top: -20px !important;
     }
 
     .title-container {
-        width: 500px;
-        margin-left: -40px;
+        width: 500px !important;
+        margin-left: -40px !important;
     }
     
   }
