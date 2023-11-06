@@ -11,6 +11,7 @@ import { useAuthContext } from '../hooks/useAuthContext';
 import Navbar from '../components/Navbar';
 import RotateLoader from 'react-spinners/RotateLoader';
 
+
 const Schedules = () => {
     const [loading, setLoading] = useState(true);
     const { id } = useParams();
@@ -179,7 +180,7 @@ const Schedules = () => {
             Schedules{user ? <span className={`text-2xl`}>, Venue: {venue}</span> : null}
             </Reveal>
             </h2>
-            <h2 className='w-1/2 font-bold text-3xl mt-5 pl-4 mr-10 ml-10 2xl:mt-0 2xl:text-4xl 2xl:pl-16'>
+            <h2 className='w-1/2 font-bold text-3xl mt-5 pl-4 mr-10 ml-[20%] 2xl:mt-0 2xl:text-4xl 2xl:pl-16'>
                 <Reveal>
                 Result
                 </Reveal>
@@ -190,7 +191,7 @@ const Schedules = () => {
         {/* <div className='relative overflow-x-auto shadow-md sm:rounded-lg'> */}
         
         <div className=''>
-        <table className={`w-[600px] shadow-md text-sm text-left 2xl:text-lg 2xl:w-[800px] text-gray-500 dark:text-gray-400`}>
+        <table className={`w-auto shadow-md text-sm text-left 2xl:text-lg 2xl:w-[800px] text-gray-500 dark:text-gray-400`}>
             <thead className={`${schedules.length === 1 ? 'text-md' : null } text-md 2xl:text-lg text-gray-700 uppercase bg-slate-700 dark:bg-gray-700 dark:text-gray-400`}>
                 <tr>
                 {schedules.length === 0 ? <><th className='px-6 py-3 text-white text-center'>Goodholy!</th></> : 

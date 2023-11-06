@@ -9,6 +9,7 @@ import { useAuthContext } from '../hooks/useAuthContext';
 import RotateLoader from 'react-spinners/RotateLoader';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import '../responsive.css';
 
 const CreateSportEvent = () => {
   const [loading, setLoading] = useState(true);
@@ -109,11 +110,11 @@ const CreateSportEvent = () => {
     <h1 className={`relative font-bold text-3xl 2xl:text-5xl text-center mt-4 ${!user ? 'mb-10' : ''}`}>{eventName}</h1>
     </Reveal>
 
-    <div className='container flex justify-center mt-5 bg-white w-[65%] rounded-xl animated-gradient-border 2xl:mt-16 2xl:w-[55%]'>
-        <div className='flex justify-center relative w-[50%] bg-gray-400 rounded-l-lg'>
+    <div className='form-box container flex justify-center mt-5 bg-white w-[65%] rounded-xl animated-gradient-border 2xl:mt-16 2xl:w-[55%]'>
+        <div className='form-box1 flex justify-center relative w-[50%] bg-gray-400 rounded-l-lg'>
             <img className='absolute mt-14 w-96 h-80 object-cover 2xl:mt-20' src={logo} alt="htc-logo" />
         </div>
-        <div className='p-4 w-1/2 rounded-r-lg'>
+        <div className='form-box2 p-4 w-1/2 rounded-r-lg'>
             <h1 className='text-center mb-4 text-2xl 2xl:text-3xl font-bold'>Add Sport Event</h1>
             <form onSubmit={handleCreateSportEvent} encType="multipart/form-data">
                 <div className='flex flex-col mb-3'>
@@ -135,12 +136,12 @@ const CreateSportEvent = () => {
                     }} />
                 </div>
 
-                <div className='flex gap-44'>
+                <div className='space-for-date flex gap-44'>
                   <label htmlFor="start" className='text-md 2xl:text-xl'>Start </label>
                   <label htmlFor="end" className='text-md 2xl:text-xl'>End </label>
                 </div>
 
-                <div className='flex gap-1 mb-3'>
+                <div className='hakdog flex gap-1 mb-3'>
                     
                     <input required className='2xl:py-2 2xl:px-3 border-2 border-gray-300 rounded-md py-1 px-2'
                     id="start" type="datetime-local"
@@ -182,7 +183,7 @@ const CreateSportEvent = () => {
                 
                 <div className="pt-4 flex items-center space-x-4">
                 <Link to={`/event/${id}/sportevents`} className="relative bg-white flex justify-center items-center w-full text-black px-1 py-2 rounded-md focus:outline-none hover:scale-100 hover:bg-black hover:text-white transition delay-0 duration-300 ease-in-out">
-                <span className="material-symbols-outlined absolute left-10">
+                <span className="x-pic material-symbols-outlined absolute left-10">
                 close
                 </span>
                     Cancel

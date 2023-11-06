@@ -10,6 +10,7 @@ import { useAuthContext } from '../hooks/useAuthContext';
 import Navbar from '../components/Navbar';
 import '../App.css';
 import RotateLoader from 'react-spinners/RotateLoader';
+import '../responsive.css';
 
 const Events = () => {
   const [loading, setLoading] = useState(true);
@@ -128,7 +129,7 @@ const Events = () => {
             <h1 className='font-semibold text-center mt-16 text-4xl'>Goodholy! There are no events yet!</h1>
           )
         ) : <Reveal>
-        <div className={`flex flex-wrap ${!user ? 'mt-10' : ''}`}>
+        <div className={`event-box flex flex-wrap ${!user ? 'mt-10' : ''}`}>
         <AnimatePresence>
         {events && events.map((event) => (
             <motion.div
@@ -138,7 +139,7 @@ const Events = () => {
             transition={{ duration: 0.4 }}
             layout
              key={event._id} className='flex basis-6/12 mb-5 '>
-              <div className='mx-4 max-w-[800px] border-3 rounded-md rotating-border bg-white'>
+              <div className='mx-4 max-w-[auto] border-3 rounded-md rotating-border bg-white'>
                 <div className='flex flex-col md:flex-row'>
                   <div className='relative w-full md:w-1/2'>
                     <div className='h-80 rounded-l-md'>
@@ -180,7 +181,7 @@ const Events = () => {
                   <div className='relative w-full md:w-1/2'>
                     <div className='bg-gray-200 h-80 rounded-r-md'>
                       <img
-                        className='absolute h-full w-full object-cover rounded-r-md hover:scale-105 transition delay-0 duration-300 ease-in-out'
+                        className='absolute h-full w-full  object-cover rounded-r-md hover:scale-105 transition delay-0 duration-300 ease-in-out'
                         src={`https://htc-event-app-api.onrender.com/Images/${event.image}`}
                         alt={event.name}
                       />

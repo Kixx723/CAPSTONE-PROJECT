@@ -175,52 +175,94 @@ const medalRanking = Object.values(medalTally);
   res.status(200).json({ event, sportevents, medalTally: medalRanking });
 });
 
-
 const updateEvent = asyncHandler(async (req, res) => {
-    const { id: eventID } = req.params;
-    const { name, startDate, endDate } = req.body;
+  const { id: eventID } = req.params;
+  const { name, startDate, endDate } = req.body;
 
-    const existingImage = Event.findOne({ id:eventID });
+  const existingEvent = await Event.findById(eventID); // Retrieve the existing event
 
-    const image = req.file ? req.file.filename : existingImage.image;
+  if (!existingEvent) {
+      return res.status(404).json({ msg: `No Event with id : ${eventID}` });
+  }
 
-    const existingEvent = await Event.findById(eventID);
-
-    if (req.body.name !== existingEvent.name) {
+  if (req.body.name !== existingEvent.name) {
       const existingEventName = await Event.findOne({ name: req.body.name });
-      
-      if (existingEventName) {
-        return res.status(400).json({ error: 'Event Name already exists' });
-      }
-    }
 
-    if(req.file) {
-      if(existingEvent.image) {
-        const imagePath = path.join(__dirname, '../public/Images', existingEvent.image);
-        fs.unlinkSync(imagePath);
+      if (existingEventName) {
+          return res.status(400).json({ error: 'Event Name already exists' });
+      }
+  }
+
+  if (req.file) {
+      if (existingEvent.image) {
+          const imagePath = path.join(__dirname, '../public/Images', existingEvent.image);
+          fs.unlinkSync(imagePath);
       }
       existingEvent.image = req.file.filename;
-    }
-    
-    const start= new Date(req.body.startDate);
-    const end = new Date(req.body.endDate);
+  }
 
-    if (start > end) { //custom validation for dates start and date end
+  const start = new Date(req.body.startDate);
+  const end = new Date(req.body.endDate);
+
+  if (start > end) {
       return res.status(400).json({ error: 'Start date must be before the end date' });
-    }
+  }
 
-    const event = await Event.findOneAndUpdate({_id: eventID }, {name, startDate, endDate, image}, {
-        new: true,
-        runValidators: true,
-        overwrite: true,
-    });
-    
-    if(!event) {
-        return res.status(404).json({ msg: `No Event with id : ${eventID}` });
-    }
-  
-    res.status(201).json({ event });
+  existingEvent.name = name;
+  existingEvent.startDate = startDate;
+  existingEvent.endDate = endDate;
+
+  const updatedEvent = await existingEvent.save(); // Save the updated event
+
+  res.status(201).json({ event: updatedEvent });
 });
+
+
+// const updateEvent = asyncHandler(async (req, res) => {
+//     const { id: eventID } = req.params;
+//     const { name, startDate, endDate } = req.body;
+
+//     const existingImage = Event.findOne({ id:eventID });
+
+//     const image = req.file ? req.file.filename : existingImage.image;
+
+//     const existingEvent = await Event.findById(eventID);
+
+//     if (req.body.name !== existingEvent.name) {
+//       const existingEventName = await Event.findOne({ name: req.body.name });
+      
+//       if (existingEventName) {
+//         return res.status(400).json({ error: 'Event Name already exists' });
+//       }
+//     }
+
+//     if(req.file) {
+//       if(existingEvent.image) {
+//         const imagePath = path.join(__dirname, '../public/Images', existingEvent.image);
+//         fs.unlinkSync(imagePath);
+//       }
+//       existingEvent.image = req.file.filename;
+//     }
+    
+//     const start= new Date(req.body.startDate);
+//     const end = new Date(req.body.endDate);
+
+//     if (start > end) { //custom validation for dates start and date end
+//       return res.status(400).json({ error: 'Start date must be before the end date' });
+//     }
+
+//     const event = await Event.findOneAndUpdate({_id: eventID }, {name, startDate, endDate, image}, {
+//         new: true,
+//         runValidators: true,
+//         overwrite: true,
+//     });
+    
+//     if(!event) {
+//         return res.status(404).json({ msg: `No Event with id : ${eventID}` });
+//     }
+  
+//     res.status(201).json({ event });
+// });
 
 const deleteEvent = asyncHandler(async (req, res) => {
     const { id: eventID } = req.params;

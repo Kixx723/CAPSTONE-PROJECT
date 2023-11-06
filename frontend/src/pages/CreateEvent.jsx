@@ -8,6 +8,7 @@ import { useAuthContext } from '../hooks/useAuthContext';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import '../App.css';
+import '../responsive.css';
 
 const CreateEvent = () => {
     
@@ -71,11 +72,11 @@ const CreateEvent = () => {
         <Navbar/>
     </div>   
     
-    <div className='container flex justify-center mt-10 bg-white w-[65%] rounded-xl animated-gradient-border 2xl:mt-24'>
-        <div className='flex justify-center relative w-[50%] bg-gray-400 rounded-l-lg'>
-            <img className='absolute w-98 h-full object-cover' src={logo} alt="htc-logo" />
+    <div className='form-box container flex justify-center mt-10 bg-white w-[65%] rounded-xl animated-gradient-border 2xl:mt-24'>
+        <div className='form-box1 flex justify-center relative w-[50%] bg-gray-400 rounded-l-lg'>
+            <img className='htc-logo absolute w-98 h-full object-cover' src={logo} alt="htc-logo" />
         </div>
-        <div className='p-4 w-1/2 rounded-r-lg'>
+        <div className='form-box2 p-4 w-1/2 rounded-r-lg'>
             <h1 className='text-center mb-4 text-2xl 2xl:text-3xl font-bold'>Create an Event</h1>
             <form onSubmit={handleCreateEvent} encType="multipart/form-data">
                 <div className='flex flex-col mb-3'>
@@ -115,15 +116,15 @@ const CreateEvent = () => {
                     }}/>
                 </div>
                 <div className="pt-4 flex items-center space-x-4">
-                <Link to={`/events`} className="relative bg-white flex justify-center items-center w-full text-black px-1 py-2 rounded-md focus:outline-none hover:scale-100 hover:bg-black hover:text-white transition delay-0 duration-300 ease-in-out">
-                <span className="material-symbols-outlined absolute left-10">
+                <Link to={`/events`} className="cancel-button relative bg-white flex justify-center items-center w-full text-black px-1 py-2 rounded-md focus:outline-none hover:scale-100 hover:bg-black hover:text-white transition delay-0 duration-300 ease-in-out">
+                <span className="x-pic material-symbols-outlined absolute left-10">
                 close
                 </span>
                     Cancel
                 </Link>
                 <button 
                 disabled={isSubmitting}
-                types='submit' className="bg-black flex justify-center items-center w-full text-white px-1 py-2 rounded-md focus:outline-none hover:scale-105 hover:bg-green-700 transition delay-0 duration-300 ease-in-out"> Create
+                types='submit' className="create-button bg-black flex justify-center items-center w-full text-white px-1 py-2 rounded-md focus:outline-none hover:scale-105 hover:bg-green-700 transition delay-0 duration-300 ease-in-out"> Create
                 </button>
                 </div>
             </form>

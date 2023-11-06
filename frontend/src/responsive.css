@@ -1,4 +1,22 @@
 
+.green {
+    height: 80% !important;
+    width: 37% !important;
+}
+
+.trini {
+    height:  80% !important;
+    width: 35% !important;
+    position: absolute;
+    bottom: -9% !important;
+}
+
+.title-container {
+    margin-top: 11% !important;
+}
+
+
+
 @media screen and (max-width: 768px) {
     .green {
         width: 350px !important;
@@ -114,7 +132,7 @@
 
     .title-text {
         font-size: 1.5rem !important;
-        margin-top: -80px !important;
+        margin-top:  15% !important;
         line-height: normal !important;
     }
 
@@ -127,5 +145,65 @@
         width: 500px !important;
         margin-left: -40px !important;
     }
+
+    .event-box {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+
+    .form-box {
+        display: flex !important;
+        flex-direction: row-reverse !important;
+        width: 85% !important;
+    }
+
+    .form-box h1{
+        font-size: 1.2rem !important;
+    }
+
+    .form-box label {
+        font-size: 1rem !important;
+    }
+
+    .form-box input {
+        width: 200px !important;
+    }
+
+    .form-box img {
+        display: none !important;
+    }
+
+    .form-box1 {
+        display: none !important;
+        
+    }
+
+    .form-box2 {
+        padding-top: 1.2rem !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        padding-top: 1.2rem !important;
+        
+    }
+
+    .x-pic {
+        display: none !important;
+    }
+    
+    .create-button {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    .hakdog {
+        display: flex !important;
+        flex-direction: column !important;
+    }
+    
+    .space-for-date {
+        display: flex !important;
+        gap: 0.2rem !important;
+    }
+   
     
   }

@@ -20,7 +20,7 @@ const Home = () => {
         <img className='trini absolute right-7 bottom-[-60px] w-[500px] h-[550px] 2xl:w-[600px] 2xl:bottom-[-70px] 2xl:h-[670px]' src={mascot} alt="mascot" />
       </div>  
       </div>
-      <div className='title-container flex justify-center items-center 2xl:mt-16 w-[50%] h-[420px]'>
+      <div className='title-container flex justify-center items-center 2xl:mt-16 w-[50%]'>
         <div className='w-[70%] h-[50%]'>
           <Reveals>
           <h1 className='title-text mb-10 text-slate-700 mx-10 font-bold text-4xl 2xl:text-5xl'>E-Tally and Medal Ranking System For Sports Events.</h1>

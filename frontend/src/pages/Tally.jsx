@@ -63,7 +63,7 @@ const Tally = () => {
         </div> */}
         <h1 className={`relative font-bold text-4xl 2xl:text-5xl text-center mt-2 mb-10`}>{eventName && eventName?.name} Medal Tally</h1>
         <div className='flex justify-center mt-[4%]'>
-        <table className='w-[60%]'>
+        <table className='w-[60%] 2xl:w-[55%]'>
             <thead className='bg-gray-300'>
                 <tr className='text-slate-800'>
                     <th className='p-2 px-5'>RANK</th>
