@@ -30,7 +30,7 @@ const UpdateSportEventResult = () => {
   useEffect(() => {
     const fetchResult = async () => {
         try {
-            const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/results/${id}`);
+            const response = await axios.get(`http://localhost:8000/api/v1/results/${id}`);
             const ID = response.data.result.sportevent._id;
             const eventname = response.data.result.sportevent.event.name;
             const sporteventname = response.data.result.sportevent.name;
@@ -57,7 +57,7 @@ const UpdateSportEventResult = () => {
   useEffect(() => {
     const fetchDepartment = async () => {
         try {
-           const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/departments`);
+           const response = await axios.get(`http://localhost:8000/api/v1/departments`);
            const departmentData = response.data.department
            setDepartments(departmentData);
         } catch (error) {
@@ -77,7 +77,7 @@ const UpdateSportEventResult = () => {
     
     try {
     setIsSubmitting(true);
-    await axios.put(`https://htc-event-app-api.onrender.com/api/v1/results/${id}`, {
+    await axios.put(`http://localhost:8000/api/v1/results/${id}`, {
         sportevent: sportEventID,
         gold: gold,
         silver: silver,

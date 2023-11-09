@@ -38,7 +38,7 @@ const CreateEvent = () => {
         
         try {
             setIsSubmitting(true);
-            await axios.post(`https://htc-event-app-api.onrender.com/api/v1/events`, formData , {
+            await axios.post(`http://localhost:8000/api/v1/events`, formData , {
             headers: {
                 'Authorization': `Bearer ${user.token}`
             }

@@ -26,7 +26,7 @@ const UpdateEvent = () => {
     useEffect(() => {
         const fetchEvent = async () => {
             try {
-                const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/events/${id}/single-event`);
+                const response = await axios.get(`http://localhost:8000/api/v1/events/${id}/single-event`);
                 const name = response.data.event.name;
                 const startDate = response.data.event.startDate;
                 const endDate = response.data.event.endDate;
@@ -61,7 +61,7 @@ const UpdateEvent = () => {
 
         try {
         setIsSubmitting(true);
-        await axios.put(`https://htc-event-app-api.onrender.com/api/v1/events/${id}`, formData , {
+        await axios.put(`http://localhost:8000/api/v1/events/${id}`, formData , {
             headers: {
                 'Authorization': `Bearer ${user.token}`
             }

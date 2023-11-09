@@ -50,7 +50,7 @@ const CreateSchedule = () => {
         requestData.department2 = department2;
     }
 
-    await axios.post(`https://htc-event-app-api.onrender.com/api/v1/schedules`, requestData, {
+    await axios.post(`http://localhost:8000/api/v1/schedules`, requestData, {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': `Bearer ${user.token}`
@@ -77,7 +77,7 @@ const CreateSchedule = () => {
 
  const fetchEventName = async () => {
     try {
-      const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/sport-events/${id}`);
+      const response = await axios.get(`http://localhost:8000/api/v1/sport-events/${id}`);
       const eventname = response.data.sportEvent.event.name;
       setEventName(eventname); 
       const sporteventdata = response.data.sportEvent;
@@ -92,7 +92,7 @@ const CreateSchedule = () => {
  useEffect(() => {
     const fetchDepartment = async () => {
         try {
-           const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/departments`);
+           const response = await axios.get(`http://localhost:8000/api/v1/departments`);
            const departmentData = response.data.department;
            setDepartments(departmentData);
         } catch (error) {

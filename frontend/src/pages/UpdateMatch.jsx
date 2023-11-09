@@ -29,7 +29,7 @@ const UpdateMatch = () => {
  useEffect(() => {
     const fetchMatch = async () => {
         try {
-            const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/matches/${id}`);
+            const response = await axios.get(`http://localhost:8000/api/v1/matches/${id}`);
             const schedID = response.data.match.schedule._id;
             const department1ID = response.data.match.winner._id;
             const department2ID = response.data.match.loser._id;
@@ -46,7 +46,7 @@ const UpdateMatch = () => {
  useEffect(() => {
     const fetchSchedule = async () => {
       try {
-        const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/schedules/${scheduleID}`);
+        const response = await axios.get(`http://localhost:8000/api/v1/schedules/${scheduleID}`);
         const scheduleData = response.data.schedule;
         setSchedule(scheduleData);
         const eventid = response.data.schedule.sportevent.event;
@@ -63,7 +63,7 @@ const UpdateMatch = () => {
 
   const fetchEventName = async () => {
     try {
-      const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/events/${eventID}/single-event`);
+      const response = await axios.get(`http://localhost:8000/api/v1/events/${eventID}/single-event`);
       const name = response.data.event.name;
       setEventName(name);
     } catch (error) {
@@ -80,7 +80,7 @@ const UpdateMatch = () => {
 
     try {
     setIsSubmitting(true);
-    await axios.put(`https://htc-event-app-api.onrender.com/api/v1/matches/${id}`, {
+    await axios.put(`http://localhost:8000/api/v1/matches/${id}`, {
         schedule: scheduleID,
         winner: winner,
         loser: loser,

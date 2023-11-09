@@ -28,7 +28,7 @@ const UpdateSportEvent = () => {
     useEffect(() => {
         const fetchSportEvent = async () => {
             try {
-                const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/sport-events/${id}`);
+                const response = await axios.get(`http://localhost:8000/api/v1/sport-events/${id}`);
                 const name = response.data.sportEvent.name;
                 const sportEventVenue = response.data.sportEvent.venue;
                 const medalCount = response.data.sportEvent.medalCount;
@@ -64,7 +64,7 @@ const UpdateSportEvent = () => {
 
      try {
         setIsSubmitting(true);
-        await axios.put(`https://htc-event-app-api.onrender.com/api/v1/sport-events/${id}`, {
+        await axios.put(`http://localhost:8000/api/v1/sport-events/${id}`, {
             name: sportEventName,
             event: eventID,
             venue: venue,

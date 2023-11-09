@@ -28,7 +28,7 @@ const CreateUser = () => {
     
         try {
         setIsSubmitting(true);
-        await axios.post(`https://htc-event-app-api.onrender.com/api/v1/users/register`, {
+        await axios.post(`http://localhost:8000/api/v1/users/register`, {
             firstname: firstName,
             lastname: lastName,
             username: username,

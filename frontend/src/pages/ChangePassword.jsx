@@ -49,7 +49,7 @@ const ChangePassword = () => {
 
     try {
         setIsSubmitting(true);
-        await axios.post(`https://htc-event-app-api.onrender.com/${user?.id}`, {
+        await axios.post(`http://localhost:8000/${user?.id}`, {
         oldPassword: oldPassword,
         newPassword: newPassword, 
       }, {

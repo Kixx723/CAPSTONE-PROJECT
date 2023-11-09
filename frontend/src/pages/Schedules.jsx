@@ -54,7 +54,7 @@ const Schedules = () => {
 
         if(window.confirm('Are you sure you want to delete this schedule?')) {
             try {
-                await axios.delete(`https://htc-event-app-api.onrender.com/api/v1/schedules/${schedID}`, {
+                await axios.delete(`http://localhost:8000/api/v1/schedules/${schedID}`, {
                     headers: {
                        'Authorization': `Bearer ${user.token}`
                     }
@@ -74,7 +74,7 @@ const Schedules = () => {
 
         if(window.confirm('Are you sure you want to delete this sport event result?')) {
             try {
-                await axios.delete(`https://htc-event-app-api.onrender.com/api/v1/results/${sportEventResultID}`, {
+                await axios.delete(`http://localhost:8000/api/v1/results/${sportEventResultID}`, {
                     headers: {
                        'Authorization': `Bearer ${user.token}`
                     }
@@ -90,7 +90,7 @@ const Schedules = () => {
     useEffect(() => {
         const fetchSchedules = async () => {
             try {
-                const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/sport-events/${id}`);
+                const response = await axios.get(`http://localhost:8000/api/v1/sport-events/${id}`);
                 const eventData = response.data.sportEvent.event.name;
                 setEventName(eventData);
                 const sportEventData = response.data.sportEvent;
@@ -175,9 +175,9 @@ const Schedules = () => {
         </div>
         <div className='flex justify-between'>
             <h2 
-            className={`${!user ? 'w-4/12' : 'w-1/2 '} font-bold text-3xl mt-5 ml-10 2xl:mt-0 2xl:text-4xl`}>
+            className={`${!user ? 'w-4/12' : 'w-1/2 '} font-bold text-2xl mt-5 ml-10 2xl:mt-0 2xl:text-3xl`}>
             <Reveal>
-            Schedules{user ? <span className={`text-2xl`}>, Venue: {venue}</span> : null}
+            Schedules{user ? <span className={`text-xl`}>, Venue: {venue}</span> : null}
             </Reveal>
             </h2>
             <h2 className='w-1/2 font-bold text-3xl mt-5 pl-4 mr-10 ml-[20%] 2xl:mt-0 2xl:text-4xl 2xl:pl-16'>
@@ -187,7 +187,7 @@ const Schedules = () => {
             </h2>
         </div>
         <Reveal>
-        <div className='flex justify-between m-10 mt-2 2xl:mt-8 '>
+        <div className='flex justify-between m-10 mt-2 2xl:mt-2 '>
         {/* <div className='relative overflow-x-auto shadow-md sm:rounded-lg'> */}
         
         <div className=''>
