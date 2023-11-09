@@ -36,7 +36,7 @@ const CreateMatchResult = () => {
 
     try {
     setIsSubmitting(true);
-    await axios.post(`http://localhost:8000/api/v1/matches`, {
+    await axios.post(`https://htc-event-app-api.onrender.com/api/v1/matches`, {
         schedule: id,
         winner: winner,
         loser: loser,
@@ -68,7 +68,7 @@ const CreateMatchResult = () => {
   useEffect(() => {
     const fetchSchedule = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/api/v1/schedules/${id}`);
+        const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/schedules/${id}`);
         const scheduleData = response.data.schedule;
         setSchedule(scheduleData);
         const eventid = response.data.schedule.sportevent.event;
@@ -87,7 +87,7 @@ const CreateMatchResult = () => {
 
   const fetchEventName = async () => {
     try {
-      const response = await axios.get(`http://localhost:8000/api/v1/events/${eventID}/single-event`);
+      const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/events/${eventID}/single-event`);
       const name = response.data.event.name;
       setEventName(name);
     } catch (error) {

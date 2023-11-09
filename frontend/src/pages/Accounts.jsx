@@ -45,7 +45,7 @@ const Accounts = () => {
     
         if(window.confirm('Are you sure you want to delete this event?')) {
          try {
-          await axios.delete(`http://localhost:8000/api/v1/users/${userID}`, {
+          await axios.delete(`https://htc-event-app-api.onrender.com/api/v1/users/${userID}`, {
             headers: {
               'Authorization' : `Bearer ${user.token}`
             }
@@ -64,7 +64,7 @@ const Accounts = () => {
     useEffect(() => {
         const fetchUsers = async () => {
             try {
-                const response = await axios.get(`http://localhost:8000/api/v1/users`);
+                const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/users`);
                 const usersData = response.data.user;
                 setUsers(usersData);
                 setLoading(false);

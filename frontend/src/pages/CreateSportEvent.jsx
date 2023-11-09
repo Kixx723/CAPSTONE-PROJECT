@@ -36,7 +36,7 @@ const CreateSportEvent = () => {
     
     try {
     setIsSubmitting(true);
-    await axios.post(`http://localhost:8000/api/v1/sport-events`, {
+    await axios.post(`https://htc-event-app-api.onrender.com/api/v1/sport-events`, {
         name: sportEventName,
         event: id,
         venue: venue,
@@ -71,7 +71,7 @@ const CreateSportEvent = () => {
   useEffect(() => {
     const fetchEventName = async () => {
         try {
-           const response = await axios.get(`http://localhost:8000/api/v1/sport-events/event/${id}`);
+           const response = await axios.get(`https://htc-event-app-api.onrender.com/api/v1/sport-events/event/${id}`);
            const eventData = response.data.event.name;
            setEventName(eventData);
            setLoading(false);
